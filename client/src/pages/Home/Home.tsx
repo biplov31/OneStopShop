@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { Product } from "../components/Product";
+import { Product } from "../../components/Product/Product.tsx";
 import { Link } from "react-router-dom";
-import { Loading } from "../components/Loading";
+import { Loading } from "../../components/Loader/Loader.tsx";
+import HomeStyles from './Home.module.css';
 
 export type ProductType = {
   price: number;
@@ -27,17 +28,17 @@ export const Home = () => {
 
   return (
     <main>
-      <section className="hero">
+      <section className={HomeStyles.hero}>
         <h1>All of your shopping needs under one roof.</h1>
-        <div className="hero-img-container">
+        <div className={HomeStyles["hero-img-container"]}>
           <img src="/images/online-shopping.svg" alt="Hero Image" />
         </div>
       </section>
       <h2>Our Products</h2>
       {!isLoading ? 
-        <div className="product-list">
+        <div className={HomeStyles["product-list"]}>
           {products.length > 0 ? products.map((product: ProductType) => (
-            <Link key={product.id} to={`/products/${product.id}`} className="product-link">
+            <Link key={product.id} to={`/products/${product.id}`} className={HomeStyles["product-link"]}>
               <Product title={product.title} image={product.image} price={product.price} />
             </Link>
           )) : <Loading />}

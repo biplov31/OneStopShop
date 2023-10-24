@@ -1,8 +1,10 @@
+import LoaderStyles from './Loader.module.css';
+
 export const Loading = () => {
   return (
-    <div className="loading">
+    <div className={LoaderStyles.loading}>
       <strong>Loading</strong>
-      <div className="loading-dots">
+      <div className={LoaderStyles["loading-dots"]}>
         <span></span>
         <span></span>
         <span></span>

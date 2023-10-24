@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
-import { CartContext } from "../contexts/CartContext";
-import { ProductType } from "./Home";
-import { Loading } from "../components/Loading";
+import { CartContext } from "../../contexts/CartContext";
+import { ProductType } from "../Home/Home.tsx";
+import { Loading } from "../../components/Loader/Loader.tsx";
+import ProductDetailStyles from './ProductDetail.module.css';
 
 export type ProductDetailType = {
   data: ProductType;
@@ -37,13 +38,13 @@ export const ProductDetail = () => {
   return (
     <main>
       {product.image ?
-        <div className="product-detail">
+        <div className={ProductDetailStyles["product-detail"]}>
           <img src={product.image} alt={product.title} />
-          <div className="product-info">
+          <div className={ProductDetailStyles["product-info"]}>
             <h3>{product.title}</h3>
-            <span className="product-price">${product.price}</span>
+            <span className={ProductDetailStyles["product-price"]}>${product.price}</span>
             <p>{product.description}</p>
-            <button className="btn" onClick={() => addToCart && addToCart(product)}>Add to cart</button>
+            <button className={ProductDetailStyles.btn} onClick={() => addToCart && addToCart(product)}>Add to cart</button>
           </div>
         </div>
         : <Loading />

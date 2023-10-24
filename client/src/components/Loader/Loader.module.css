@@ -1,0 +1,43 @@
+.loading {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: .2rem;
+}
+.loading > strong {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: .8;
+}
+.loading-dots {
+  display: flex;
+}
+.loading-dots span {
+  height: .6rem;
+  width: .6rem;
+  border-radius: 50%;
+  background-color: #000000;
+  display: inline-block;
+  margin: 0 .2rem;
+  animation: dot-flashing 2s ease-in-out infinite;
+}
+@keyframes dot-flashing {
+  0%, 100% {
+    /* transform: scale(.2); */
+    background-color: #555555;
+  }
+  50% {
+    /* transform: scale(1); */
+    background-color: rgba(152, 128, 255, 0.2);
+  }
+}
+.loading span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.loading span:nth-child(3) {
+  animation-delay: 1s;
+}

@@ -1,5 +1,5 @@
 import { createContext, useState, ReactNode } from 'react';
-import { ProductType } from '../pages/Home';
+import { ProductType } from '../pages/Home/Home.tsx';
 
 export type CartItemType = ProductType & {
   quantity: number;

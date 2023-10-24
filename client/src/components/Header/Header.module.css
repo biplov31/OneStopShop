@@ -1,0 +1,37 @@
+header {
+  background-color: #222222;
+  color: #dddddd;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-weight: 600;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+nav .cart-container {
+  position: relative;
+}
+.cart-container .shopping-cart {
+  width: 1.5rem;
+  filter: invert(1);
+}
+.total-cart-items {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: rgb(15, 213, 15);
+  color: #000000;
+  border-radius: 2px;
+  padding: 0 2px;
+  width: 18px;
+  text-align: center;
+  font-size: .8rem;
+}

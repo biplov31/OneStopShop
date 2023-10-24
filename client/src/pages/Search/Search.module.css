@@ -1,0 +1,45 @@
+.searchbar {
+  padding: .8rem 1rem;
+  margin: 2rem auto;
+  display: block;
+  width: 50%;
+  border-radius: 8px;
+  border: 2px solid rgba(34, 34, 34, .5);
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+}
+main.search-page {
+  text-align: center;
+}
+.search-results {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.search-result img, .cart-item-img {
+  width: 15%;
+  aspect-ratio: 1;
+}
+.search-result {
+  padding: .6rem .8rem;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+  background-color: rgba(221, 221, 221, .4);
+  border-radius: 8px;
+}
+.page-info-text {
+  text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+  .searchbar, .search-results {
+    width: 80%;
+  }
+}

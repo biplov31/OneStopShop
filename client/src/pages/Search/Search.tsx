@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import { ProductType } from './Home';
+import { ProductType } from '../Home/Home.tsx';
+import SearchStyles from './Search.module.css';
 
 export type SearchType = {
   data: ProductType;
@@ -34,27 +35,27 @@ export const Search = () => {
     <main>
       <input 
         type="text" 
-        className="searchbar"
+        className={SearchStyles.searchbar}
         placeholder="Search for products" 
         onChange={(e) => handleChange(e)} 
       />
       {searchTerm ? (
-        <div className="search-results item-list">
+        <div className={SearchStyles["search-results"]}>
           {filteredProducts && filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <Link key={product.id} to={`/products/${product.id}`}>
-                <div className="search-result individual-item">
+                <div className={SearchStyles["search-result"]}>
                   <img src={product.image} alt={product.title} />
                   <span>{product.title}</span>
                 </div>
               </Link>
             ))
           ) : (
-            <p className='page-info-text'>No products found.</p>
+            <p className={SearchStyles['page-info-text']}>No products found.</p>
           )}
         </div>
       ) : (
-        <p className='page-info-text'>Search results will appear here.</p>
+        <p className={SearchStyles['page-info-text']}>Search results will appear here.</p>
       )}
     </main>
   )
